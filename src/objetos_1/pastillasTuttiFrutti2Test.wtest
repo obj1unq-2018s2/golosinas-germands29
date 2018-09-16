@@ -1,0 +1,29 @@
+
+import golosinas.*
+	
+describe "test de pastillas de tutti frutti cuando no son libre de gluten" {
+	
+	fixture{ pastillasTuttiFrutti.libreGluten(false)}
+
+	test "peso inicial" {
+		assert.equals(5, pastillasTuttiFrutti.peso())
+	}
+	
+	test "precio" {
+		assert.equals(10, pastillasTuttiFrutti.precio())
+	}
+	
+	test "mordiscos" {
+		pastillasTuttiFrutti.mordisco()
+		assert.equals( "chocolate", pastillasTuttiFrutti.nextSabor())
+		pastillasTuttiFrutti.mordisco()
+		assert.equals( "naranja" , pastillasTuttiFrutti.nextSabor())
+	}
+	
+
+	
+	test "libre de gluten" {
+		assert.notThat(pastillasTuttiFrutti.esLibreDeGluten())	
+	}
+	
+}
