@@ -36,4 +36,11 @@ fixture{
 		assert.notThat(mariano.preciosCuidados())
 	}
 	
+	test "el peso de las golosinas tiene que ser 520"{
+		assert.equals(mariano.pesoGolosinas(), 520)
+	}
+	
+	test "la golosina mas cara es chocolatin"{
+		assert.equals(mariano.golosinaMasCara(),chocolatin)
+	}
 }
