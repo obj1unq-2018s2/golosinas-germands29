@@ -1,0 +1,30 @@
+import mariano.*
+import golosinas.*
+
+describe "test de mariano"{
+
+fixture{
+	chocolatin.pesoInicial(500)
+	mariano.comprar(chocolatin)
+	mariano.comprar(caramelo)
+	mariano.comprar(bombon)
+}
+
+
+	test "golosinas tiene que contener chocolate, caramelo y bombon"{
+		var golosinasAux = [chocolatin, caramelo, bombon]
+		assert.equals(mariano.golosinas(), golosinasAux)
+	}
+	
+	test "golosinas faltantes debe devolver #[chupetin, alfajor]"{
+		var golosinasDeseadas = [alfajor, bombon, chocolatin, chupetin]
+		var golosinasQueFaltan = [alfajor, chupetin]
+		assert.equals(mariano.golosinasFaltantes(golosinasDeseadas), golosinasQueFaltan)
+	}
+
+	test "gustos faltantes debe devolver #[melon, vainilla]"{
+		var gustosDeseados = ["melon", "chocolate", "frutilla", "vainilla"]
+		var gustosQueFaltan = ["melon", "vainilla"]
+		assert.equals(mariano.gustosFaltantes(gustosDeseados), gustosQueFaltan)
+	}
+}
