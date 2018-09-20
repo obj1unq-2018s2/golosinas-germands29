@@ -12,7 +12,7 @@ object mariano {
 	
 	method probarGolosinas() { bolsaDeGolosinas.forEach{golosina => golosina.mordisco()} }
 	
-	method hayGolosinaSinTACC(){ return bolsaDeGolosinas.any {golosina => golosina.libreDeGluten() } }
+	method hayGolosinaSinTACC(){ return bolsaDeGolosinas.any {golosina => golosina.libreGluten() } }
 	
 	method preciosCuidados(){ return  bolsaDeGolosinas.all {golosina => golosina.precio() <= 10 } }
 	

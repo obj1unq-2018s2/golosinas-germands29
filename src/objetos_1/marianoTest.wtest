@@ -27,4 +27,13 @@ fixture{
 		var gustosQueFaltan = ["melon", "vainilla"]
 		assert.equals(mariano.gustosFaltantes(gustosDeseados), gustosQueFaltan)
 	}
+	
+	test " hay golosina sin TACC devuelve true"{
+		assert.that(mariano.hayGolosinaSinTACC())
+	}
+	
+	test "precios cuidados debe ser false"{
+		assert.notThat(mariano.preciosCuidados())
+	}
+	
 }
