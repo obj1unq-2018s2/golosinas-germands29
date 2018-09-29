@@ -20,6 +20,7 @@ object mariano {
 	
 	method golosinasDeSabor(unSabor){return bolsaDeGolosinas.filter{golosina => golosina.gusto()== unSabor}}
 	
+	// esto se podia resolver simplemente con bolsaDeGolosinas.map(golosina => golosina.gusto())
 	method sabores(){ 
 		var listaDeSabores = []
 		bolsaDeGolosinas.forEach{golosina => listaDeSabores.add(golosina.gusto())}
@@ -34,6 +35,8 @@ object mariano {
 		return golosinasDeseadas.filter{golosina => !bolsaDeGolosinas.contains(golosina)}
 	}
 	
+	// el filter no modifica la coleccion, retorna una nueva, no hace falta
+	// guardarla previamente en una variable.
 	method gustosFaltantes(gustosDeseados){
 		var gustosDeLaBolsa = self.sabores()
 		return gustosDeseados.filter{gusto => !gustosDeLaBolsa.contains(gusto)}
